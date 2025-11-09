@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "noetica-app"
+version = "0.1.0"
+description = "A personal assistant web application built with Django."
+authors = ["Noetica App <noetica.app@meta.ua>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
