@@ -1,0 +1,36 @@
+{% load static %}
+<header class="header" role="banner">
+  <div class="container header__inner" role="navigation"
+       aria-label="Primary">
+    <a class="brand" href="/">
+      <img
+        class="brand__logo"
+        src="{% static 'brand/noetica_logo.png' %}"
+        alt="Noetica logo"
+      />
+      <span class="brand__name">Noetica</span>
+    </a>
+
+    <div class="spacer" aria-hidden="true"></div>
+
+    <nav class="header__actions">
+        <div class="lang-switcher">
+            <button class="btn btn--ghost lang-switcher__btn"
+                    aria-haspopup="true" aria-expanded="false">
+              EN
+            </button>
+            <ul class="lang-switcher__menu" role="menu">
+              <li><a href="/?lang=en" role="menuitem">EN · English</a></li>
+              <li><a href="/?lang=uk" role="menuitem">UK · Українська</a></li>
+              <li><a href="/?lang=pl" role="menuitem">PL · Polski</a></li>
+            </ul>
+        </div>
+      <a class="btn btn--ghost" href="#" role="button">
+        Log in
+      </a>
+      <a class="btn btn--primary" href="#" role="button">
+        Sign up
+      </a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>{% block title %}Noetica{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'core/css/base.css' %}"
+    />
+  </head>
+  <body class="page">
+    {% include 'partials/header.html' %}
+  
+    <div class="layout">
+      {% include 'partials/sidebar.html' %}
+      <main class="layout__content">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </body>
+  
+</html>
