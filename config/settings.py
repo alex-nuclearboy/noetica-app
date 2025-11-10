@@ -164,6 +164,26 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # -----------------------------------------------------------------------------
+# Cloudinary storage
+# -----------------------------------------------------------------------------
+# https://cloudinary.com/documentation/django_integration
+
+CLOUDINARY_URL = env("CLOUDINARY_URL")
+
+INSTALLED_APPS += [
+    "cloudinary",
+    "cloudinary_storage",
+]
+
+# Use Cloudinary for media file storage
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+# Optional Cloudinary configuration for better folder organisation
+CLOUDINARY_STORAGE = {
+    "PREFIX": "noetica",  # root folder in your Cloudinary Media Library
+}
+
+# -----------------------------------------------------------------------------
 # Django defaults
 # -----------------------------------------------------------------------------
 
