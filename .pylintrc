@@ -1,0 +1,71 @@
+# =============================================================================
+# Pylint configuration for the Noetica Django project
+# =============================================================================
+
+[MASTER]
+# Add the project root to sys.path and point to Django settings.
+init-hook=
+    import os, sys;
+    sys.path.append(os.path.abspath('.'));
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+
+# Load the Django plugin so Pylint understands models, forms, etc.
+load-plugins=pylint_django
+
+# Exclude auto-generated directories from linting to avoid false positives.
+ignore-patterns=.*migrations/.*, .*__pycache__.*
+ignore-paths = .*/migrations/*, .*/__pycache__/*
+
+# Cache results to speed up subsequent runs;
+# keep a single process for stability.
+persistent=yes
+jobs=1
+
+[REPORTS]
+# Lean output without the summary footer.
+reports=no
+score=no
+
+[MESSAGES CONTROL]
+# Disable specific Pylint message categories and rules.
+disable = too-many-ancestors, too-few-public-methods
+
+[BASIC]
+# Allow commonly used short names and conventional callback parameters.
+good-names=
+    _,              # conventional throwaway variable in unpacking
+    i,j,k,          # loop indices
+    e,ex,           # exception aliases
+    pk,qs,db,       # common ORM idioms
+    args,kwargs,    # variadic parameters
+    sender,instance,created,  # callback context arguments
+    UserModel       # Django convention for get_user_model()
+
+# Treat names starting with '_' as intentionally unused (dummy variables).
+dummy-variables-rgx = ^_.*$
+
+# Keep variable names readable without being draconian.
+variable-rgx=[a-z_][a-z0-9_]{1,30}$
+
+[FORMAT]
+# Restrict code width to 79 characters for readability across terminals.
+max-line-length=79
+
+[DESIGN]
+# Pragmatic limits for web apps.
+max-args=8
+max-locals=25
+max-attributes=15
+
+[SIMILARITIES]
+# Detect meaningful copy-paste while ignoring comments/docstrings.
+min-similarity-lines=12
+ignore-comments=yes
+ignore-docstrings=yes
+
+[TYPECHECK]
+# Django generates these at runtime; treat them as valid to reduce noise.
+generated-members =
+    objects,
+    DoesNotExist,
+    MultipleObjectsReturned

@@ -16,6 +16,10 @@ django-cloudinary-storage = "^0.3.0"
 pillow = "^12.0.0"
 
 
+[tool.poetry.group.dev.dependencies]
+pylint = ">=3,<4"
+pylint-django = ">=2.6,<3"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
