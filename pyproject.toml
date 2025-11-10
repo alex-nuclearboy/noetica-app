@@ -13,6 +13,7 @@ django-environ = "^0.12.0"
 psycopg2 = "^2.9.11"
 cloudinary = "^1.44.1"
 django-cloudinary-storage = "^0.3.0"
+pillow = "^12.0.0"
 
 
 [build-system]
