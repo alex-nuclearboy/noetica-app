@@ -184,6 +184,14 @@ CLOUDINARY_STORAGE = {
 }
 
 # -----------------------------------------------------------------------------
+# Default avatars
+# -----------------------------------------------------------------------------
+# Path to the local default avatar image that is uploaded to Cloudinary
+# automatically when a new user profile is created.
+
+DEFAULT_AVATAR_PATH = BASE_DIR / "assets" / "defaults" / "avatar.webp"
+
+# -----------------------------------------------------------------------------
 # Django defaults
 # -----------------------------------------------------------------------------
 
